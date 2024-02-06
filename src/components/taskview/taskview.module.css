@@ -1,0 +1,67 @@
+.taskContainer{
+	font-size: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 5%;
+	width: 100%;
+}
+#dark {background-color: red;}
+
+.buttonBox{
+	opacity: 100%;
+	animation: fade-in 2s linear
+}
+
+@keyframes fade-in{
+	0%{
+		opacity: 0%;
+	}
+	80%{
+		opacity: 0%;
+	}
+	100%{
+		opacity: 100%;
+	}
+}
+
+.taskButton{
+	color: #C4C7D0;
+	border: none;
+	border-radius: 1em;
+	background-color: white;
+	cursor: pointer;
+}
+
+.taskInput{
+	color: white;
+	font-size: 50px;
+	border: none;
+	width: 100%;
+	background: rgb(196,199,208, 0.5)
+}
+
+.taskInput:focus{
+	outline: none;
+}
+
+.toDoExit{
+	animation: slide-out 0.5s linear
+}
+
+@keyframes slide-out{
+	from{
+		opacity: 100%;
+		transform: translateX(0px)
+	}
+	to{
+		opacity: 0%;
+		transform: translateX(200px)
+	}
+}
+
+
+
+
+
+

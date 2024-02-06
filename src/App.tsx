@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState, createContext } from 'react';
 import './App.css';
+import { MainContainer } from 'components/maincontainer/maincontainer';
+
+import { themeInitial } from 'library/context';
+
+export const ThemeContext = createContext(themeInitial);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [darkmode, setDarkMode] = useState("light");
+	return (
+		<ThemeContext.Provider value={{
+			darkmode,
+			setDarkMode: () => darkmode === "dark" ? setDarkMode("light") : setDarkMode("dark") }}>
+			<div className="App" id={darkmode}>
+				<div>{darkmode}</div>
+				<MainContainer />
+			</div>
+		</ThemeContext.Provider>
+	);
 }
 
 export default App;
