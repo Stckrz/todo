@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import { TasksArray } from 'components/maincontainer/maincontainer';
+import { ThemeContext } from 'App';
 import { ITask } from 'library/context';
 import style from './taskview.module.css';
 import { Typewriter } from 'components/typewriter/typewriter';
@@ -11,6 +12,7 @@ interface TaskViewProps {
 
 export const TaskView: React.FC<TaskViewProps> = ({ task }) => {
 	const { tasks, setTasks } = useContext(TasksArray)
+	const { darkmode } = useContext(ThemeContext);
 	const [editText, setEditText] = useState(task.title)
 	const [editMode, setEditMode] = useState(false);
 	const [animationCssClass, setAnimationCssClass] = useState("")
@@ -46,23 +48,25 @@ export const TaskView: React.FC<TaskViewProps> = ({ task }) => {
 
 	return (
 		<>
-					{editMode ?
-						<div className={`${animationCssClass} ${style.taskContainer}`}>
-							<input className={style.taskInput} placeholder={task.title} onChange={(e) => handleChange(e, setEditText)}></input>
-							<button className={style.taskButton} onClick={() => { editTask(); setEditMode(!editMode) }}>confirm</button>
-							<button className={style.taskButton} onClick={() => { setEditMode(!editMode) }}>cancel</button>
-						</div>
-						:
-						<div className={`${animationCssClass} ${style.taskContainer}`}>
-							<div>
-								<Typewriter message={task.title} delay={100} />
-							</div>
-							<div className={style.buttonBox}>
-								<button className={style.taskButton} onClick={() => { deleteTaskHandler() }} >delete</button>
-								<button className={style.taskButton} onClick={() => { setEditMode(!editMode) }} >edit</button>
-							</div>
-						</div>
-					}
+			{editMode ?
+				<div className={`${animationCssClass} ${style.taskContainer}`}>
+					<input className={style.editTaskInput} placeholder={task.title} onChange={(e) => handleChange(e, setEditText)}></input>
+					<div className={style.buttonBox}>
+						<button id={darkmode} className={style.taskButton} onClick={() => { editTask(); setEditMode(!editMode) }}>confirm</button>
+						<button id={darkmode} className={style.taskButton} onClick={() => { setEditMode(!editMode) }}>cancel</button>
+					</div>
+				</div>
+				:
+				<div className={`${animationCssClass} ${style.taskContainer}`}>
+					<div>
+						<Typewriter message={task.title} delay={100} />
+					</div>
+					<div className={style.buttonBox}>
+						<button id={darkmode} className={style.taskButton} onClick={() => { deleteTaskHandler() }} >delete</button>
+						<button id={darkmode} className={style.taskButton} onClick={() => { setEditMode(!editMode) }} >edit</button>
+					</div>
+				</div>
+			}
 
 		</>
 	)

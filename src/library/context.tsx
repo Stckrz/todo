@@ -21,10 +21,10 @@ export interface ITasksInterface {
 
 export interface Theme {
 	darkmode: string,
-	setDarkMode: () => void
+	setTheme: () => void
 }
 
 export const themeInitial: Theme = {
 	darkmode: "",
-	setDarkMode: () => { },
+	setTheme: () => { },
 }

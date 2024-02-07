@@ -6,11 +6,11 @@
 	min-height: 5%;
 	width: 100%;
 }
-#dark {background-color: red;}
 
 .buttonBox{
+	display: flex;
 	opacity: 100%;
-	animation: fade-in 2s linear
+	animation: fade-in 2s linear;
 }
 
 @keyframes fade-in{
@@ -33,12 +33,24 @@
 	cursor: pointer;
 }
 
-.taskInput{
+.editTaskInput{
 	color: white;
 	font-size: 50px;
 	border: none;
 	width: 100%;
-	background: rgb(196,199,208, 0.5)
+	background: rgb(196,199,208, 0.5);
+	animation: roll-out 0.25s linear;
+	border-radius: 5px;
+}
+@keyframes roll-out{
+	from{
+		transform: translateY(-15px);
+		opacity: 0%
+	}
+	to{
+		transform: translateY(0px);
+		opacity: 100%;
+	}
 }
 
 .taskInput:focus{

@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState, useContext, useRef } from 'react';
 import style from './newtask.module.css';
-import { TasksArray } from 'components/maincontainer/maincontainer';
+import { TasksArray, } from 'components/maincontainer/maincontainer';
+import { ThemeContext } from 'App';
 
 export const NewTask: React.FC = () => {
 	const { tasks, setTasks } = useContext(TasksArray)
+	const { darkmode } = useContext(ThemeContext)
 	const [title, setTitle] = useState("")
 
 	const inputref = useRef<HTMLInputElement>(null);
@@ -32,9 +34,8 @@ export const NewTask: React.FC = () => {
 				<div className={style.inputContainer}>
 					Task Name
 					<input ref={inputref} className={style.taskInput} onChange={(e) => handleChange(e, setTitle)}></input>
-				<button className={style.taskButton} onClick={createTaskHandler}>Create</button>
+					<button id={darkmode} className={style.taskButton} onClick={createTaskHandler}>Create</button>
 				</div>
-				{/* <button className={style.taskButton} onClick={createTaskHandler}>Create</button> */}
 			</div>
 		</>
 	)

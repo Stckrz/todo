@@ -11,9 +11,8 @@ function App() {
 	return (
 		<ThemeContext.Provider value={{
 			darkmode,
-			setDarkMode: () => darkmode === "dark" ? setDarkMode("light") : setDarkMode("dark") }}>
+			setTheme: () => darkmode === "dark" ? setDarkMode("light") : setDarkMode("dark") }}>
 			<div className="App" id={darkmode}>
-				<div>{darkmode}</div>
 				<MainContainer />
 			</div>
 		</ThemeContext.Provider>
