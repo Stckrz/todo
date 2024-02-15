@@ -49,7 +49,7 @@ export const TaskView: React.FC<TaskViewProps> = ({ task }) => {
 	return (
 		<>
 			{editMode ?
-				<div className={`${animationCssClass} ${style.taskContainer}`}>
+				<div id={darkmode} className={`${animationCssClass} ${style.taskContainer}`}>
 					<input className={style.editTaskInput} placeholder={task.title} onChange={(e) => handleChange(e, setEditText)}></input>
 					<div className={style.buttonBox}>
 						<button id={darkmode} className={style.taskButton} onClick={() => { editTask(); setEditMode(!editMode) }}>confirm</button>

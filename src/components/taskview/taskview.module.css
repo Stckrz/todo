@@ -9,6 +9,8 @@
 
 .buttonBox{
 	display: flex;
+	justify-content: flex-end;
+	gap: 2px;
 	opacity: 100%;
 	animation: fade-in 2s linear;
 }
@@ -37,11 +39,12 @@
 	color: white;
 	font-size: 50px;
 	border: none;
-	width: 100%;
+	width: 90%;
 	background: rgb(196,199,208, 0.5);
 	animation: roll-out 0.25s linear;
 	border-radius: 5px;
 }
+
 @keyframes roll-out{
 	from{
 		transform: translateY(-15px);
@@ -74,6 +77,8 @@
 
 
 
-
-
-
+@media screen and (max-width: 800px){
+	.taskContainer{
+		font-size: 30px;
+	}
+}
