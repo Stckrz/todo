@@ -23,6 +23,21 @@
 	width: 100%;
 	background: rgb(196,199,208, 0.5)
 }
+.taskInputShake{
+	border: 1px solid red;
+	animation: shake 0.1s linear;
+	animation-iteration-count: 3;
+}
+@keyframes shake{
+	from{
+		transform: translateX(2px)
+		 translateY(1px);
+	}
+	to{
+		transform: translateX(-2px)
+		translateY(0px);
+	}
+}
 
 .taskInput:focus{
 	outline: none;
