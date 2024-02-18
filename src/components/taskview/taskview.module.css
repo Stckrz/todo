@@ -30,9 +30,12 @@
 .taskButton{
 	color: #C4C7D0;
 	border: none;
-	border-radius: 1em;
 	background-color: white;
 	cursor: pointer;
+}
+.taskButton:focus{
+	font-weight: bold;
+	outline: none;
 }
 
 .editTaskInput{

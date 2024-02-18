@@ -24,6 +24,7 @@ export const TaskView: React.FC<TaskViewProps> = ({ task }) => {
 	}
 
 	function editTask() {
+		editText !== "" ?
 		setTasks(
 			tasks.map((item) => {
 				if (item.taskId === task.taskId) {
@@ -33,6 +34,8 @@ export const TaskView: React.FC<TaskViewProps> = ({ task }) => {
 				}
 			})
 		)
+		:
+		setEditMode(false)
 	}
 
 	function deleteTaskHandler() {
