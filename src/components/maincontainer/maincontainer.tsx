@@ -6,13 +6,10 @@ import { TaskContainer } from 'components/taskcontainer/taskcontainer';
 import { DarkMode } from 'components/darkmode/darkmode';
 import { ITask, tasksInitial } from 'library/context';
 
-
-
-export const TasksArray = createContext(tasksInitial)
+export const TasksArray = createContext(tasksInitial);
 
 export const MainContainer: React.FC = () => {
-	const [tasks, setTasks] = useState<ITask[]>([])
-
+	const [tasks, setTasks] = useState<ITask[]>([]);
 
 	return (
 		<>

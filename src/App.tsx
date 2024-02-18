@@ -1,7 +1,6 @@
 import { useState, createContext } from 'react';
 import './App.css';
 import { MainContainer } from 'components/maincontainer/maincontainer';
-
 import { themeInitial } from 'library/context';
 
 export const ThemeContext = createContext(themeInitial);

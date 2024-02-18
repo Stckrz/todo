@@ -8,9 +8,11 @@
 	width: 100vw;
 	padding: 10px;
 }
+
 #dark .mainWrapper{
 	background-color: red;
 }
+
 #light .mainWrapper{
 	background-color: black;
 }

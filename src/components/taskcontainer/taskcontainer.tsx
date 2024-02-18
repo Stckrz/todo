@@ -5,7 +5,7 @@ import { TasksArray } from 'components/maincontainer/maincontainer';
 import { TaskView } from 'components/taskview/taskview';
 
 export const TaskContainer: React.FC = () => {
-	const { tasks } = useContext(TasksArray)
+	const { tasks } = useContext(TasksArray);
 	return (
 		<>
 			<div className={style.taskContainer}>

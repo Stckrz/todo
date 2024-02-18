@@ -11,16 +11,16 @@ interface TaskViewProps {
 }
 
 export const TaskView: React.FC<TaskViewProps> = ({ task }) => {
-	const { tasks, setTasks } = useContext(TasksArray)
+	const { tasks, setTasks } = useContext(TasksArray);
 	const { darkmode } = useContext(ThemeContext);
-	const [editText, setEditText] = useState(task.title)
+	const [editText, setEditText] = useState(task.title);
 	const [editMode, setEditMode] = useState(false);
-	const [animationCssClass, setAnimationCssClass] = useState("")
+	const [animationCssClass, setAnimationCssClass] = useState("");
 
 	function deleteTask() {
 		setTasks(
-			tasks.filter(item => item.taskId !== task.taskId)
-		)
+			tasks.filter(item => item.taskId !== task.taskId);
+		);
 	}
 
 	function editTask() {

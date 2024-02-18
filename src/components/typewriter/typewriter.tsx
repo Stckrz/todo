@@ -14,28 +14,26 @@ export const Typewriter: React.FC<TypewriterProps> = ({ message, delay }) => {
 
 	useEffect(() => {
 
-		clearInterval(interval.current)
-		setTypedMessage("")
+		clearInterval(interval.current);
+		setTypedMessage("");
 
-		let builtString = ""
+		let builtString = "";
 		let i = 0;
 
 		interval.current = setInterval(() => {
 			builtString += message[i]
 			i++
-			setTypedMessage(builtString)
+			setTypedMessage(builtString);
 
 			if (builtString === message) {
-				clearInterval(interval.current)
+				clearInterval(interval.current);
 			}
 		}, delay);
 
 		return () => {
 			clearInterval(interval.current)
 		}
-
 	}, [message, delay])
-
 
 	return (
 		<>

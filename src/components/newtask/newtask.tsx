@@ -5,15 +5,15 @@ import { TasksArray, } from 'components/maincontainer/maincontainer';
 import { ThemeContext } from 'App';
 
 export const NewTask: React.FC = () => {
-	const { tasks, setTasks } = useContext(TasksArray)
-	const { darkmode } = useContext(ThemeContext)
-	const [title, setTitle] = useState("")
-	const [emptyInputShake, setEmptyInputShake] = useState(false)
+	const { tasks, setTasks } = useContext(TasksArray);
+	const { darkmode } = useContext(ThemeContext);
+	const [title, setTitle] = useState("");
+	const [emptyInputShake, setEmptyInputShake] = useState(false);
 
 	const inputref = useRef<HTMLInputElement>(null);
 
 	function handleChange(e: React.ChangeEvent<HTMLInputElement>, setfunction: React.Dispatch<React.SetStateAction<string>>) {
-		setfunction(e.target.value)
+		setfunction(e.target.value);
 	}
 
 	const createTaskHandler = () => {
