@@ -19,7 +19,7 @@ export const TaskView: React.FC<TaskViewProps> = ({ task }) => {
 
 	function deleteTask() {
 		setTasks(
-			tasks.filter(item => item.taskId !== task.taskId);
+			tasks.filter(item => item.taskId !== task.taskId)
 		);
 	}
 
